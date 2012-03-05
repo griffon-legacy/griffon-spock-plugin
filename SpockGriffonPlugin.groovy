@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 the original author or authors.
+ * Copyright 2010-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,32 +19,65 @@
  */
 class SpockGriffonPlugin {
     // the plugin version
-    def version = '0.5.1'
+    String version = '0.6'
     // the version or versions of Griffon the plugin is designed for
-    def griffonVersion = '0.9.4 > *' 
+    String griffonVersion = '0.9.5 > *'
     // the other plugins this plugin depends on
-    def dependsOn = [:]
+    Map dependsOn = [:]
     // resources that are included in plugin packaging
-    def pluginIncludes = []
+    List pluginIncludes = []
     // the plugin license
-    def license = 'Apache Software License 2.0'
+    String license = 'Apache Software License 2.0'
     // Toolkit compatibility. No value means compatible with all
     // Valid values are: swing, javafx, swt, pivot, gtk
-    def toolkits = []
+    List toolkits = []
     // Platform compatibility. No value means compatible with all
     // Valid values are:
     // linux, linux64, windows, windows64, macosx, macosx64, solaris
-    def platforms = []
+    List platforms = []
+    // URL where documentation can be found
+    String documentation = ''
+    // URL where source can be found
+    String source = 'https://github.com/griffon/griffon-spock-plugin'
 
-    def author = 'Andres Almiray'
-    def authorEmail = 'aalmiray@users.sourceforge.net'
-    def title = 'Spock Plugin - spockframework.org'
-    def description = '''
-Test your Griffon apps with Spock.
-A port of the Grails Spock plugin by Luke Daley
-http://grails.org/plugin/spock
+    List authors = [
+            [
+                    name: 'Andres Almiray',
+                    email: 'aalmiray@yahoo.com'
+            ]
+    ]
+    String title = 'Enables Spock for testing Griffon projects'
+    // accepts Markdown syntax. See http://daringfireball.net/projects/markdown/ for details
+    String description = '''
+[Spock][1] is a testing and specification framework for Java and Groovy applications. What makes it stand out
+from the crowd is its beautiful and highly expressive specification language. This plugin brings the power of
+Spock to Griffon. It is a direct port of the [Grails Spock plugin][2] originally made by Luke Daley.
+
+Usage
+-----
+
+The [Spock][1] project has [excellent documentation][3] to get you started writing specifications.
+
+### Running Tests
+
+Tests are run just like normal Griffon tests via grails `test-app` . A new “spock” test type is added to the unit,
+integration and functional phases. You can use the Griffon 0.9 test type targeting feature to run only your Spock tests…
+
+        griffon test-app :spock
+	
+Class names of Spock tests must end in either *Spec* or *Specification*; otherwise the Griffon test runner won't find them. 
+
+Scripts
+-------
+
+ * **create-unit-spec** - creates a new Unit specification. Mimics GriffonUnitTestCase
+ * **create-integration-spec** - creates a new Integration specification. Mimics a regular JUnit integration test
+
+The [FEST plugin][4] provides an additional spec script.
+
+[1]: http://spockframework.org
+[2]: http://grails.org/plugin/spock
+[3]: http://code.google.com/p/spock/wiki/SpockBasics
+[4]: /plugin/fest
 '''
-
-    // URL to the plugin's documentation
-    def documentation = 'http://griffon.codehaus.org/Spock+Plugin'
 }
