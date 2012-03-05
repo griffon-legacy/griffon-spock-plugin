@@ -6,6 +6,6 @@ class @artifact.name@ extends IntegrationSpec {
 
     def 'my first integration spec'() {
         expect:
-            app
+            false
     }
 }

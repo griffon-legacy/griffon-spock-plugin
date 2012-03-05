@@ -3,6 +3,6 @@
 class @artifact.name@ extends Specification {
     def 'my first unit spec'() {
         expect:
-            1 == 1
+            false
     }
 }
