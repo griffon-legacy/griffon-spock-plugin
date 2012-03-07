@@ -60,7 +60,7 @@ The [Spock][1] project has [excellent documentation][3] to get you started writi
 
 ### Running Tests
 
-Tests are run just like normal Griffon tests via grails `test-app` . A new “spock” test type is added to the unit,
+Tests are run just like normal Griffon tests via grails `test-app`. A new _spock_ test type is added to the unit,
 integration and functional phases. You can use the Griffon 0.9 test type targeting feature to run only your Spock tests…
 
         griffon test-app :spock
