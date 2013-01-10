@@ -7,7 +7,7 @@ griffon.project.dependency.resolution = {
     }
   
     dependencies {
-        String spockVersion = '0.6-groovy-1.8'
+        String spockVersion = '0.7-groovy-2.0'
         build("org.spockframework:spock-core:$spockVersion") {
             excludes 'groovy-all', 'asm', 'ant'
         }
